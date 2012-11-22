@@ -13,7 +13,9 @@ public class PersonManager {
 
 	public void addPerson(Person person) {
 		Person newPerson = new Person();
-
+		
+		newPerson.setId(Person.counter);
+		Person.counter++;
 		newPerson.setFirstName(person.getFirstName());
 		newPerson.setZipCode(person.getZipCode());
 		newPerson.setPin(person.getPin());
@@ -21,8 +23,22 @@ public class PersonManager {
 		newPerson.setMarried(person.isMarried());
 		newPerson.setWeight(person.getWeight());
 		newPerson.setNumOfChildren(person.getNumOfChildren());
-
 		db.add(newPerson);
+	}
+	
+	public void updatePerson(Person person) {
+		Person updatedPerson = new Person();
+
+		updatedPerson.setId(person.getId());
+		updatedPerson.setFirstName(person.getFirstName());
+		updatedPerson.setZipCode(person.getZipCode());
+		updatedPerson.setPin(person.getPin());
+		updatedPerson.setDateOfBirth(person.getDateOfBirth());
+		updatedPerson.setMarried(person.isMarried());
+		updatedPerson.setWeight(person.getWeight());
+		updatedPerson.setNumOfChildren(person.getNumOfChildren());
+
+		db.set(updatedPerson.getId(),updatedPerson);
 	}
 
 	// Removes the person with given PIN

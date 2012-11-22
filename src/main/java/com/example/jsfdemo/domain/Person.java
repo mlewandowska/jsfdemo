@@ -9,6 +9,8 @@ import javax.validation.constraints.Size;
 
 public class Person {
 	
+	public static int counter=0;
+	private int id=0;
 	private String firstName = "unknown";
 	private String zipCode = "";
 	private String pin = "";
@@ -16,6 +18,13 @@ public class Person {
 	private double weight;
 	private boolean married;
 	private int numOfChildren;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	@Size(min = 2, max = 20)
 	public String getFirstName() {

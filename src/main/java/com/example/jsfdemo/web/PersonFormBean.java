@@ -51,6 +51,12 @@ public class PersonFormBean implements Serializable {
 		return "showPersons";
 		//return null;
 	}
+	
+	public String updatePerson() {
+		pm.updatePerson(person);
+		return "showPersons";
+		//return null;
+	}
 
 	public String deletePerson() {
 		Person personToDelete = persons.getRowData();

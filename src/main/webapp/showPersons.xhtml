@@ -13,6 +13,11 @@
       <f:facet name="header">#{msg.personAllLabel}</f:facet>
       
       <h:column>
+        <f:facet name="header">Id</f:facet>
+        #{item.id}
+      </h:column>
+      
+      <h:column>
         <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
         #{item.firstName}
       </h:column>
@@ -23,10 +28,32 @@
       </h:column>
       
       <h:column>
-        <f:facet name="header">#{msg.action}</f:facet>
-        <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/>
+        <f:facet name="header">#{msg.personZipCodeLabel}</f:facet>
+        #{item.zipCode}
       </h:column>
       
+      <h:column>
+        <f:facet name="header">#{msg.personDobLabel}</f:facet>
+        #{item.dateOfBirth}
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">#{msg.personWeightLabel}</f:facet>
+        #{item.weight}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.personNumOfChildrenLabel}</f:facet>
+        #{item.numOfChildren}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.action}</f:facet>
+        <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/> 
+        <h:commandLink value="#{msg.actionUpdate}" action="updateAjax?faces-redirect=true"/>
+      </h:column>
+
+   
      </h:dataTable>
     </h:form>
       
